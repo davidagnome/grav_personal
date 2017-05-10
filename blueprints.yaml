@@ -1,15 +1,15 @@
-name: dsa_grav
+name: grav_personal
 version: 0.1.0
-description: Grav Theme for Democratic Socialists of America (DSA)
+description: Personal Grav Theme
 icon: rebel
 author:
-  name: Seattle DSA
-  email: info@seattledsa.org
-homepage: https://github.com/seattle-dsa/grav-theme-dsa
-demo: http://demo.yoursite.com
+  name: DA Peters
+  email: hmm
+homepage: https://dapeters.me/
+demo: http://dapeters.me
 keywords: grav, theme, etc
-bugs: https://github.com/seattle-dsa/grav-theme-dsa/issues
-readme: https://github.com/seattle-dsa/grav-theme-dsa/blob/develop/README.md
+bugs: https://github.com/dpeters911/grav_personalissues
+readme: https://github.com/dpeters911/grav_personal/blob/develop/README.md
 license: MIT
 
 form:
