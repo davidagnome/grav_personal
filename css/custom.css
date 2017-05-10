@@ -1,8 +1,6 @@
 /* Core Stuff */
-@font-face {font-family: 'ManifoldDSA-ExtraBold';src: url('webfonts/ManifoldDSA-ExtraBold.eot');src: url('webfonts/ManifoldDSA-ExtraBold.eot?#iefix') format('embedded-opentype'),url('webfonts/ManifoldDSA-ExtraBold.woff2') format('woff2'),url('webfonts/ManifoldDSA-ExtraBold.woff') format('woff'),url('webfonts/ManifoldDSA-ExtraBold.ttf') format('truetype');}
-@font-face {font-family: 'ManifoldDSA-Medium';src: url('webfonts/ManifoldDSA-Medium.eot');src: url('webfonts/ManifoldDSA-Medium.eot?#iefix') format('embedded-opentype'),url('webfonts/ManifoldDSA-Medium.woff2') format('woff2'),url('webfonts/ManifoldDSA-Medium.woff') format('woff'),url('webfonts/ManifoldDSA-Medium.ttf') format('truetype');}
-header, body, p {font-family: ManifoldDSA-Medium, Helvetica, Tahoma, Sans-Serif;}
-h1, h2, h3, h4, h5 {font-family: ManifoldDSA-ExtraBold, Helvetica, Tahoma, Sans-Serif;}
+header, body, p {font-family: 'Roboto', Helvetica, Tahoma, Sans-Serif;}
+h1, h2, h3, h4, h5 {font-family: 'Roboto', Helvetica, Tahoma, Sans-Serif;}
 
 * {
     -webkit-box-sizing: border-box;
@@ -14,6 +12,7 @@ body {
     font-size: 1rem;
     line-height: 1.7;
     color: #606d6e;
+    font-weight:300;
 }
 
 h1,
@@ -22,6 +21,8 @@ h3,
 h4,
 h5,
 h6 {
+    font-weight: 700;
+    font-weight: bold;
     color: #454B4D;
 }
 
