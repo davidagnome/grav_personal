@@ -1,0 +1,72 @@
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+<!DOCTYPE html>
+<html class="no-js" dir="ltr" lang="{{ grav.language.getActive ?: theme_config.default_lang }}">
+<head>
+{% block head %}
+    <meta charset="utf-8" />
+    <title>{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include 'partials/metadata.html.twig' %}
+
+    <link rel="icon" type="image/png" href="{{ url('theme://images/icon.png') }}" />
+    <link rel="canonical" href="{{ page.url(true, true) }}" />
+
+    {% block stylesheets %}
+        {% do assets.addCss('theme://css/foundation.min.css', 98) %}
+        {% do assets.addCss('https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', 99) %}
+        {% do assets.addCss('theme://css/custom.css', 20) %}
+    {% endblock %}
+    {{ assets.css() }}
+
+    {% block javascripts %}
+        {% do assets.addJs('theme://js/vendor/jquery.js', {'priority':150, 'pipeline':false, 'loading':'async', 'group':'bottom'}) %}
+        {% do assets.addJs('theme://js/vendor/what-input.js', {'priority':140, 'pipeline':false, 'loading':'async', 'group':'bottom'}) %}
+        {% do assets.addJs('theme://js/vendor/foundation.min.js', {'priority':130, 'pipeline':false, 'loading':'async', 'group':'bottom'}) %}
+        {% do assets.addJs('theme://js/app.js', {'priority':120, 'pipeline':false, 'loading':'async', 'group':'bottom'}) %}
+    {% endblock %}
+    {{ assets.js() }}
+
+{% endblock head%}
+</head>
+<body id="top" class="{{ page.header.body_classes }}">
+
+{% block header %}
+    <div class="header">
+        <div class="row padding">
+            <a class="logo left" href="{{ base_url == '' ? '/' : base_url }}">
+                <i class="fa fa-rebel"></i>
+                {{ config.site.title }}
+            </a>
+            {% block header_navigation %}
+            <nav class="main-nav">
+                {% include 'partials/navigation.html.twig' %}
+            </nav>
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block body %}
+    <section id="body">
+        <div class="row padding">
+        {% block content %}{% endblock %}
+        </div>
+    </section>
+{% endblock %}
+
+{% block footer %}
+    <div class="footer text-center">
+        <div class="row padding">
+            <p><a href="https://github.com/SeattleDSA/grav-theme-dsa">grav-theme-dsa</a> was <i class="fa fa-code"></i> with <i class="fa fa-heart"></i> by <a href="https://seattledsa.org/">Seattle DSA</a>.</p>
+        </div>
+    </div>
+{% endblock %}
+
+{% block bottom %}
+    {{ assets.js('bottom') }}
+{% endblock %}
+
+</body>
+</html>
